@@ -1,1 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, sans-serif;
+}
+
+body {
+  background: #0b0b0b;
+  color: white;
+}
+
+.bg-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+}
+
+.landing {
+  position: relative;
+  z-index: 1;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  height: 100vh;
+}
+
+.sidebar {
+  background: #0f3d2e;
+  padding: 1rem;
+}
+
+.sidebar a {
+  display: block;
+  color: white;
+  margin-top: 0.5rem;
+  text-decoration: none;
+}
+
+.main {
+  padding: 1rem;
+}
+
+.center {
+  text-align: center;
+}
+
+.actions a {
+  margin: 0 0.5rem;
+  color: #1db954;
+}
 
