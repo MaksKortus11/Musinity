@@ -2,6 +2,8 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import AnimatedBackground from "./background/AnimatedBackground";
 import LandingLayout from "./layout/LandingLayout";
 import AppLayout from "./layout/AppLayout";
+import RequireAuth from "./components/auth/RequireAuth";
+
 
 import Home from "./pages/Home";
 import Login from "./pages/Login";
@@ -11,7 +13,11 @@ import Events from "./pages/Events";
 
 export default function App() {
   const { pathname } = useLocation();
-  const showBg = pathname === "/" || pathname === "/login";
+  const showBg =
+  pathname === "/" ||
+  pathname === "/login" ||
+  pathname === "/register";
+
 
   return (
     <>
@@ -25,10 +31,17 @@ export default function App() {
           <Route path="/register" element={<Register />} />
         </Route>
 
-        <Route element={<AppLayout />}>
-          <Route path="/chat" element={<Chat />} />
-          <Route path="/events" element={<Events />} />
-        </Route>
+        <Route
+  element={
+    <RequireAuth>
+      <AppLayout />
+    </RequireAuth>
+  }
+>
+  <Route path="/chat" element={<Chat />} />
+  <Route path="/events" element={<Events />} />
+</Route>
+
       </Routes>
     </>
   );

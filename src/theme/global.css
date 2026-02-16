@@ -111,28 +111,173 @@ html, body, #root {
   color: #e5e7eb;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .btn-glass:hover {
   color: white;
-  border-color: rgba(29, 185, 84, 0.45);
+  border-color: rgba(255, 255, 255, 0.28); /* 🔥 ciemna obwódka */
   background: rgba(255, 255, 255, 0.08);
   transform: translateY(-2px);
 }
 
-/* ===== ACCENT (primary action) ===== */
+/* ===== AUTH CARD ===== */
 
-.btn-glass-accent {
-  color: #eafff4;
-  border-color: rgba(29, 185, 84, 0.35);
-  background: rgba(29, 185, 84, 0.14);
+.auth-card {
+  position: relative;           /* 🔥 KLUCZOWE */
+  z-index: 20;                  /* 🔥 nad tłem */
+
+  width: 100%;
+  max-width: 380px;
+  padding: 2.2rem;
+  border-radius: 20px;
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  background: rgba(15, 15, 15, 0.55); /* 🔥 ciemniejsze */
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  text-align: center;
 }
 
-.btn-glass-accent:hover {
-  background: rgba(29, 185, 84, 0.22);
+
+.auth-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.auth-input {
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.35);
+  color: white;
+  outline: none;
+}
+
+.auth-input::placeholder {
+  color: #9ca3af;
+}
+
+.auth-input:focus {
   border-color: rgba(29, 185, 84, 0.6);
-  box-shadow: 0 0 18px rgba(29, 185, 84, 0.35);
 }
+
+.auth-submit {
+  margin-top: 0.5rem;
+}
+
+.auth-switch {
+  margin-top: 1.2rem;
+  font-size: 0.9rem;
+  color: #9ca3af;
+}
+
+.auth-switch a {
+  color: #1db954;
+  text-decoration: none;
+}
+
+.auth-switch a:hover {
+  text-decoration: underline;
+}
+
+.auth-error {
+  color: #ff6b6b;
+  font-size: 0.85rem;
+  margin-top: -4px;
+}
+
+/* ===== SIDEBAR USER ===== */
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-user {
+  margin-top: auto;
+  padding-top: 1rem;
+}
+
+.sidebar-username {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-bottom: 0.5rem;
+}
+
+.sidebar-logout {
+  width: 100%;
+}
+
+/* ===== ACCORDION ===== */
+
+.genre-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin: 0.6rem 0;
+}
+
+.genre-main {
+  width: 100%;
+  text-align: left;
+  padding: 0.5rem 0.7rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #e5e7eb;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.genre-main:hover {
+  border-color: rgba(29, 185, 84, 0.5);
+}
+
+.genre-subs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  padding: 0.4rem 0.2rem 0.2rem;
+}
+
+/* ===== GENRE CHIPS (FIX) ===== */
+
+.genre-chip {
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  cursor: pointer;
+
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #e5e7eb;
+
+  transition: all 0.2s ease;
+}
+
+.genre-chip:hover {
+  border-color: rgba(29, 185, 84, 0.6);
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.genre-chip.active {
+  background: rgba(29, 185, 84, 0.22);
+  border-color: rgba(29, 185, 84, 0.75);
+  color: #eafff4;
+}
+
 
 
 

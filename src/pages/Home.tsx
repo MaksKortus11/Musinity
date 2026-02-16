@@ -7,13 +7,13 @@ export default function Home() {
         <h1 className="logo">Musinity</h1>
         <p className="tagline">Your music community</p>
 
-        <div className="actions">
-  <a href="/login" className="btn btn-glass">
+<div className="actions">
+  <Link to="/login" className="btn btn-glass">
     Zaloguj się
-  </a>
-  <a href="/register" className="btn btn-glass btn-glass-accent">
+  </Link>
+  <Link to="/register" className="btn btn-glass">
     Załóż konto
-  </a>
+  </Link>
 </div>
 
       </div>

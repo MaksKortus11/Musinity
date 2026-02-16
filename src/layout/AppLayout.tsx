@@ -1,14 +1,33 @@
-import { Outlet, NavLink } from "react-router-dom";
+import { Outlet, Link, useNavigate } from "react-router-dom";
+import { getSessionUser, logoutUser } from "../lib/auth";
 
 export default function AppLayout() {
+  const nav = useNavigate();
+  const user = getSessionUser();
+
+  function handleLogout() {
+    logoutUser();
+    nav("/login");
+  }
+
   return (
     <div className="app">
       <aside className="sidebar">
-        <h1>Musinity</h1>
+        <h2>Musinity</h2>
+
         <nav>
-          <NavLink to="/chat">Chat</NavLink>
-          <NavLink to="/events">Eventy</NavLink>
+          <Link to="/chat">Chat</Link>
+          <Link to="/events">Events</Link>
         </nav>
+
+        {/* ===== USER SECTION (dół sidebara) ===== */}
+        <div className="sidebar-user">
+          <div className="sidebar-username">👤 {user}</div>
+
+          <button onClick={handleLogout} className="btn btn-glass sidebar-logout">
+            Wyloguj
+          </button>
+        </div>
       </aside>
 
       <main className="main">
@@ -17,4 +36,3 @@ export default function AppLayout() {
     </div>
   );
 }
-
