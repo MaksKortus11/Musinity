@@ -1,3 +1,8 @@
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,30 +10,30 @@
   font-family: system-ui, sans-serif;
 }
 
-body {
-  background: #0b0b0b;
-  color: white;
-}
-
 .bg-layer {
   position: fixed;
   inset: 0;
   z-index: 0;
+  pointer-events: none;
 }
 
 .landing {
   position: relative;
-  z-index: 1;
-  height: 100vh;
+  z-index: 10;
+  min-height: 100vh;
+  width: 100vw;          
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+
 .app {
   display: grid;
   grid-template-columns: 260px 1fr;
   height: 100vh;
+  position: relative;
+  z-index: 10; 
 }
 
 .sidebar {
@@ -55,4 +60,81 @@ body {
   margin: 0 0.5rem;
   color: #1db954;
 }
+
+.landing,
+.landing * {
+  color: white;
+}
+
+/* ===== HERO ===== */
+
+.hero {
+  text-align: center;
+  transform: translateY(-60px); /* 🔥 podnosi całość */
+}
+
+.logo {
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.tagline {
+  font-size: 1.1rem;
+  color: #d1d5db;
+  margin-bottom: 2.5rem;
+}
+
+/* ===== BUTTONS ===== */
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.btn {
+  padding: 0.8rem 1.8rem;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* ===== BASE GLASS ===== */
+
+.btn-glass {
+  color: #e5e7eb;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.btn-glass:hover {
+  color: white;
+  border-color: rgba(29, 185, 84, 0.45);
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
+}
+
+/* ===== ACCENT (primary action) ===== */
+
+.btn-glass-accent {
+  color: #eafff4;
+  border-color: rgba(29, 185, 84, 0.35);
+  background: rgba(29, 185, 84, 0.14);
+}
+
+.btn-glass-accent:hover {
+  background: rgba(29, 185, 84, 0.22);
+  border-color: rgba(29, 185, 84, 0.6);
+  box-shadow: 0 0 18px rgba(29, 185, 84, 0.35);
+}
+
+
+
+
 

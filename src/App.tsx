@@ -17,6 +17,7 @@ export default function App() {
     <>
       {showBg && <AnimatedBackground />}
 
+
       <Routes>
         <Route element={<LandingLayout />}>
           <Route path="/" element={<Home />} />
@@ -32,4 +33,6 @@ export default function App() {
     </>
   );
 }
+
+
 
