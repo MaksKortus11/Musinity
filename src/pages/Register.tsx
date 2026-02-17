@@ -1,3 +1,5 @@
+import ArtistSearch from "../components/music/ArtistSearch";
+import { ArtistItem } from "../lib/musicbrainz";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { registerUser } from "../lib/auth";
@@ -9,10 +11,13 @@ export default function Register() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  
+
 
   // accordion + selection
   const [openMain, setOpenMain] = useState<string | null>(null);
   const [selectedGenres, setSelectedGenres] = useState<string[]>([]);
+  const [favArtists, setFavArtists] = useState<ArtistItem[]>([]);
 
   // ===== handlers =====
 
@@ -43,6 +48,7 @@ export default function Register() {
       password,
       genres: selectedGenres,
       mainGenres,
+      favoriteArtists: favArtists,
     });
 
     if (!res.ok) {
@@ -109,6 +115,18 @@ export default function Register() {
               </div>
             ))}
           </div>
+
+          <div style={{ marginTop: "1rem" }}>
+  <h3 style={{ color: "white", marginBottom: "0.4rem" }}>
+    Ulubieni artyści
+  </h3>
+
+  <ArtistSearch
+    selected={favArtists}
+    onChange={setFavArtists}
+  />
+</div>
+
 
           {error && <div className="auth-error">{error}</div>}
 

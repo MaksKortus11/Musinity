@@ -1,12 +1,16 @@
 const USERS_KEY = "musinity_users";
 const SESSION_KEY = "musinity_session";
 
-export type User = {
+export type UserData = {
   username: string;
-  password: string;
-  genres: string[];
   mainGenres: string[];
+  favoriteArtists?: {
+    id: string;
+    name: string;
+    country?: string;
+  }[];
 };
+
 
 
 
