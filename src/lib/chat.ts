@@ -24,5 +24,13 @@ export const MOCK_MESSAGES: Record<string, { user: string; text: string }[]> =
     ],
     "Hip-Hop": [
       { user: "młody_G", text: "[*] Mobbyn"}
-    ]
+    ],
+    Rock: [
+      { user: "RedDragon", text: "Co myślicie o nowym albumie Deftones?" },
+      { user: "Octopus", text: "Moim zdaniem świetny 🔥" },
+      { user: "Marek72", text: "@Octopus też tak uważam" },
+      { user: "testuser1", text: "Mi się wydaje, że to ich najlepszy album od lat" },
+      { user: "Octopus", text: "Ooo ciekawe, czemu tak uważasz?" },
+      { user: "Danny", text: "Ja bym jednak postawił na White Pony 😄" }
+]
   };
